@@ -1,0 +1,15 @@
+<!-- share_file.html -->
+{% extends "base.html" %}
+{% block content %}
+  <h1>Share File</h1>
+  <form method="post">
+    {% csrf_token %}
+    <label for="shared_with_user">Select user to share with:</label>
+    <select name="shared_with_user" id="shared_with_user">
+      {% for user in users %}
+        <option value="{{ user.id }}">{{ user.username }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit">Share</button>
+  </form>
+{% endblock %}

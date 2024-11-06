@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+  <h2>Shared Files:</h2>
+  <ul>
+    {% for shared_file in shared_files %}
+        <li>{{ shared_file.file.tittle }} - Shared by: {{ shared_file.shared_by.username }} - shared to: {{shared_file.shared_with.username}}</li>
+    {% endfor %}
+  </ul>
+
+{% endblock content%}
